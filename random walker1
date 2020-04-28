@@ -1,0 +1,61 @@
+ArrayList<walker> w = new ArrayList<walker>(); 
+
+  
+
+void setup() { 
+
+    size(500, 400); 
+
+    for (int i = 0; i < 100; i++) { 
+
+        w.add(new walker()); 
+
+    } 
+
+} 
+
+  
+
+class walker { 
+
+    int x = 250; 
+
+    int y = 200; 
+
+    int a = 0; 
+
+    int b = 100; 
+
+    int c = 225; 
+
+    void move() { 
+
+        this.x += random(-2, 2); 
+
+        this.y += random(-2, 2); 
+
+        this.a += random(0, 1); 
+
+        this.b += random(-1, 2); 
+
+        this.c -= random(0, 1); 
+
+    } 
+
+} 
+
+void draw() { 
+
+    background(255); 
+
+    for (walker m : w) { 
+
+        m.move(); 
+
+        stroke(m.a, m.b, m.c); 
+
+        ellipse(m.x, m.y, 2, 2); 
+
+    } 
+
+} 
